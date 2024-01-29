@@ -5,7 +5,7 @@ Note that after backspacing an empty text, the text will continue empty.
 */
 
 function backspaceCompare(s: string, t: string): boolean {
-	const stackBuild = (input: string): string[] => {
+	const stackBuild = (input: string): string => {
 		const stack: string[] = [];
 		for (const char of input) {
 			if (char === "#") {
@@ -14,10 +14,10 @@ function backspaceCompare(s: string, t: string): boolean {
 				stack.push(char);
 			}
 		}
-		return stack;
+		return stack.join("");
 	};
 
-	return stackBuild(s) === stackBuild(t);
+	return stackBuild(s) == stackBuild(t);
 }
 
 //! 9min
